@@ -183,7 +183,7 @@ module.exports = (compiler, opts) => {
 
     // only send stats to newly connected clients if no previous clients have
     // connected
-    if (stats && !wss.clients.length) {
+    if (stats && wss.clients.size === 1) {
       const jsonStats = stats.toJson(options.stats);
 
       /* istanbul ignore if */
