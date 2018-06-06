@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build:client": "babel lib/client --out-dir client",
-    "prepare": "npm run compile:build",
+    "prepare": "npm run build:client",
     "commitlint": "commitlint",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --cache src test",
@@ -100,7 +100,6 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "pre-commit": "lint-staged",
   "lint-staged": {
     "*.js": [
       "eslint --fix",
